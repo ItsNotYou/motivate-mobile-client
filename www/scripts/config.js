@@ -20,6 +20,7 @@ require.config({
         nools: 'lib/nools.min',
         'node-rules': 'lib/node-rules',
         contactJS: 'lib/contactJS',
+        urijs: 'lib/urijs',
         // adaptation engine
         MoAE: 'motivate_adaptation_engine/AdaptationEngine',
         // rule engine
