@@ -17,13 +17,13 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 out: [
                     {
                         'name':'CI_WIFI_UI',
-                        'type':'ENUM'
+                        'type':'STRING'
                     }
                 ]
             },
             simpleInterpretData: function(values, callback) {
                 var d = values[0];
-                // Wir wollen folgende Smartphones unterstützen
+                // Wir wollen folgende Smartphones unterstÃ¼tzen
 
                 // Samsung Galaxy S4 (Tini, Hendrik)
                 if (d.os === "Android" && d.version.startsWith("5.") && d.model === "GT-I9515") {
@@ -49,7 +49,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                     return;
                 }
 
-                // Unbekanntes Gerät
+                // Unbekanntes GerÃ¤t
                 callback({0: "Unknown-device"});
             }
         });
