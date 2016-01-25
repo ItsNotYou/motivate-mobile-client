@@ -2,9 +2,12 @@
  * Created by tobias on 06.05.15.
  */
 define([
-    './AddressInterpreter'
-], function(
-    AddressInterpreter
-) {
+  './ConstraintInterpreter',
+  './NtpViaCellInterpreter',
+  './NtpViaWifiInterpreter',
+  './RouterFinderInterpreter',
+  './ThermoFinderInterpreter',
+  './WifiUiInterpreter'
+], function() {
     return arguments;
 });
