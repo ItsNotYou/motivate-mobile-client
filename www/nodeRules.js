@@ -3,7 +3,7 @@ var _d = new _contactJS.Discoverer();
 
 var _rules = [
 	{
-		"id": "96e63019-b0eb-4ea7-a2b4-cf8fa97cf1f7",
+		"id": "4492c1cc-88e8-4b35-a91e-3900abe36c61",
 		"relatedContextInformation": [
 ],
 		"condition": function(R) {
@@ -17,7 +17,7 @@ var _rules = [
 		}
 	},
 	{
-		"id": "198ec2eb-3d8d-4954-bb8f-1e760823cec2",
+		"id": "3307d9e9-0a87-4c1b-8b31-21031c0e2bea",
 		"relatedContextInformation": [
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_FINISHED_LEARNING_UNIT", type: "STRING", parameterList: []}),
 ],
@@ -32,7 +32,7 @@ _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_F
 		}
 	},
 	{
-		"id": "b88510db-f21b-4bf7-89b4-8413e573ff06",
+		"id": "de7fa6dd-0c5a-4774-939b-8ea174270add",
 		"relatedContextInformation": [
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_CURRENT_LEARNING_UNIT", type: "STRING", parameterList: []}),
 ],
@@ -47,7 +47,7 @@ _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_C
 		}
 	},
 	{
-		"id": "031073ad-0c89-49ea-b770-f0a724044a1d",
+		"id": "bd6d4421-3ce6-4933-8cb0-dea848f9c7b7",
 		"relatedContextInformation": [
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_FINISHED_LEARNING_UNIT", type: "STRING", parameterList: []}),
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_USER_AGE", type: "INTEGER", parameterList: []}),
@@ -63,7 +63,7 @@ _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_U
 		}
 	},
 	{
-		"id": "c2087037-2ef4-4123-9cf9-b157b7c93a7e",
+		"id": "a8bb1344-1ea5-4f0d-86bc-6a1a351b3ac0",
 		"relatedContextInformation": [
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_CURRENT_LEARNING_UNIT", type: "STRING", parameterList: []}),
 ],
