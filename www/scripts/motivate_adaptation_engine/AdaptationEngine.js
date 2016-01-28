@@ -184,7 +184,7 @@ define('MoAE', ['MoRE', 'MoCD'], function (RuleEngine, ContextDetector) {
 
             if (!this.isRuleMatching) {
                 this.isRuleMatching = true;
-                this._ruleEngine.matchRules(this._contextDetector.getContextInformation());
+                //this._ruleEngine.matchRules(this._contextDetector.getContextInformation());
                 if (!isNaN(intervalInMilliseconds)) {
                     this._ruleMatchingInterval = setInterval(function(){self._ruleEngine.matchRules(self._contextDetector.getContextInformation())}, intervalInMilliseconds);
                 }
