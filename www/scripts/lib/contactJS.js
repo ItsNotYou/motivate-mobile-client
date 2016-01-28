@@ -1665,6 +1665,17 @@ define('contextInformationList',['dataList', 'contextInformation'], function(Dat
          * @returns {boolean}
          */
         ContextInformationList.prototype.fulfils = function(contextInformation, operator, value) {
+            try {
+                if (contextInformation.name = "CI_AVAILABLE_NTP") {
+                    var x = contextInformation._parameterList.getItemsAsJson();
+                    if (x.CP_CONNECTION_TYPE && x.CP_CONNECTION_TYPE === "CONNECTION_WIFI") {
+                        debugger;
+                    }
+                }
+            } catch (error) {
+                console.log("error", error);
+            }
+
             var contextInformationOfKind = this.find(contextInformation);
             for (var index in contextInformationOfKind) {
                 if (contextInformationOfKind.hasOwnProperty(index) && this._fulfils(contextInformationOfKind[index], operator, ContextInformation.restoreDataType(contextInformation.getDataType(), value))) return true;
@@ -1683,6 +1694,8 @@ define('contextInformationList',['dataList', 'contextInformation'], function(Dat
         ContextInformationList.prototype._fulfils = function(contextInformation, operator, value) {
             switch(operator) {
                 case ContextInformation.OPERATOR_EQUALS:
+                    var result = contextInformation.getValue() == value;
+                    var restoredValue = contextInformation.getValue();
                     return contextInformation.getValue() == value;
                     break;
                 case ContextInformation.UNEQUALS:
