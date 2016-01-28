@@ -15,10 +15,12 @@ define(['contactJS'], function(contactJS) {
     var setOutputData = function(values, outContextInformation) {
         var rawValues = outContextInformation.getItems();
         for (var rawValueIndex in rawValues) {
+            var rawValue = rawValues[rawValueIndex];
             if (values.hasOwnProperty(rawValueIndex)) {
                 var value = values[rawValueIndex];
-                var rawValue = rawValues[rawValueIndex];
                 rawValue.setValue(value);
+            } else {
+                rawValue.setValueUnknown();
             }
         }
         return rawValues;
