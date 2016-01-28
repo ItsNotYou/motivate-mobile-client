@@ -2,7 +2,7 @@
  * Created by Kristin on 12.01.2016.
  */
 
-define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
+define(['contactJS', './InterpreterCreator', 'jquery'], function (contactJS, creator, $) {
     var CONSTRAINT_NTP_UPDATE = "ntp update only with internet connectivity";
 
     return (function() {
@@ -24,7 +24,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 ]
             },
             simpleInterpretData: function(values, callback) {
-                var required = values[0].contains(CONSTRAINT_NTP_UPDATE);
+                var required = $.inArray(CONSTRAINT_NTP_UPDATE, values[0]);
                 var result = required ? "true" : "false";
 
                 callback({0: result});
