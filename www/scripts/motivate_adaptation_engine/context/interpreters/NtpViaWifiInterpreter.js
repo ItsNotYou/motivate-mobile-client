@@ -37,8 +37,12 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 }else {
                     result = undefined;
                 }
-                //console.log("TINI_Wifi: "+result);
-                callback({0: result});
+
+                if (result === undefined) {
+                    callback({});
+                } else {
+                    callback({0: result});
+                }
             }
         });
     })();
