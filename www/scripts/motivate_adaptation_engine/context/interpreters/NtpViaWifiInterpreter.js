@@ -17,12 +17,12 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                     {
                         'name':'CI_AVAILABLE_NTP',
                         'type':'BOOLEAN',
-                        'parameterList': [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_WIFI"]]
+                        'parameterList': [["CP_CONNECTION_TYPE", "ENUM", "CONNECTION_WIFI"]]
                     }
                 ]
             },
             simpleInterpretData: function(values, callback) {
-                var result = false;
+                var result = "false";
 
                 var host = values[0].host;
                 var connection = values[0].connection;
@@ -31,11 +31,11 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 //console.log("TINI: connection - " + connection);
 
                 if (connection === 'wifi' && available === true){
-                    result = true;
-                }else if (connection === ('unknown') || available === undefined){
-                    result = undefined;
+                    result = "true";
+                }else if (connection !== 'wifi' && available === true){
+                    result = "false";
                 }else {
-                    result = false;
+                    result = undefined;
                 }
                 //console.log("TINI_Wifi: "+result);
                 callback({0: result});
