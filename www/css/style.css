@@ -1,1 +1,25 @@
 /* Empty. Add your own CSS if you like */
+
+.learning-unit-card.ng-enter,
+.learning-unit-card.ng-leave {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+}
+
+.learning-unit-card.ng-enter,
+.learning-unit-card.ng-leave.ng-leave-active {
+  opacity:0;
+}
+.learning-unit-card.ng-leave,
+.learning-unit-card.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+.learning-unit-card {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.learning-unit-card.ng-hide {
+  opacity: 0;
+}
