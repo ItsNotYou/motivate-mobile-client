@@ -6,7 +6,7 @@ var learningUnitState = {};
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
+angular.module('starter', ['ionic', 'ngAnimate'])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -44,18 +44,14 @@ angular.module('starter', ['ionic'])
 
   .service('scenarioService', function () {
     var scenario = {};
-    var currentUnitIndex = 0;
+    var currentUnitUUID;
 
     var getUnits = function () {
       return scenario._units;
     };
 
     var getCurrentUnit = function () {
-      return scenario._units[currentUnitIndex];
-    };
-
-    var getUnitByIndex = function (index) {
-      return scenario._units[index];
+      return getUnitByUUID(currentUnitUUID);
     };
 
     var getUnitByUUID = function(uuid) {
@@ -65,8 +61,8 @@ angular.module('starter', ['ionic'])
         return null;
     };
 
-    var setCurrentUnitIndex = function (index) {
-      currentUnitIndex = index
+    var setCurrentUnitUUID = function (uuid) {
+      currentUnitUUID = uuid
     };
 
     var setScenario = function (newScenario) {
@@ -77,9 +73,8 @@ angular.module('starter', ['ionic'])
       getUnits: getUnits,
       setScenario: setScenario,
       getCurrentUnit: getCurrentUnit,
-      getUnitByIndex: getUnitByIndex,
       getUnitByUUID: getUnitByUUID,
-      setCurrentUnitIndex: setCurrentUnitIndex
+      setCurrentUnitUUID: setCurrentUnitUUID
     };
   })
 
@@ -293,6 +288,8 @@ angular.module('starter', ['ionic'])
         parameterList: [],
         value: 32
       }, false);
+
+      $scope.$apply();
     };
 
     /**
