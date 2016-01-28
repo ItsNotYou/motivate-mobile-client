@@ -8,7 +8,8 @@ define([
   './NtpConnectionWidget',
   './RouterFinderWidget',
   './ScanWidget',
-  './SupportKeywordWidget'
+  './SupportKeywordWidget',
+  './WifiEnabledWidget'
 ], function() {
     return arguments;
 });
