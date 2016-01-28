@@ -29,7 +29,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 ]
             },
             simpleInterpretData: function(values, callback) {
-                var result = false;
+                var result = "false";
 
                 //tests if any scanned device is one expected device
                 for (var scanIndex in values[0]){
@@ -43,7 +43,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                             //tests if found device is searched router
                             //routername still dummy
                             if (scan_dev === 'FritzBox_3635'){
-                                result = true;
+                                result = "true";
                         }
                     }
                 }

@@ -28,7 +28,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 ]
             },
             simpleInterpretData: function(values, callback) {
-                var result = false;
+                var result = "false";
 
                 //tests if any scanned device is expected device
                 for (var scanIndex in values[0]){
@@ -42,7 +42,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                             //tests if searched Thermostat
                             //thermostatname still dummy
                             if (scan_dev === 'ThermoGod_30B'){
-                                result = true;
+                                result = "true";
                             }
                         }
                     }
