@@ -44,14 +44,18 @@ angular.module('starter', ['ionic'])
 
   .service('scenarioService', function () {
     var scenario = {};
-    var currentUnitUUID;
+    var currentUnitIndex = 0;
 
     var getUnits = function () {
       return scenario._units;
     };
 
     var getCurrentUnit = function () {
-      return getUnitByUUID(currentUnitUUID);
+      return scenario._units[currentUnitIndex];
+    };
+
+    var getUnitByIndex = function (index) {
+      return scenario._units[index];
     };
 
     var getUnitByUUID = function(uuid) {
@@ -61,8 +65,8 @@ angular.module('starter', ['ionic'])
         return null;
     };
 
-    var setCurrentUnitUUID = function (uuid) {
-      currentUnitUUID = uuid
+    var setCurrentUnitIndex = function (index) {
+      currentUnitIndex = index
     };
 
     var setScenario = function (newScenario) {
@@ -73,8 +77,9 @@ angular.module('starter', ['ionic'])
       getUnits: getUnits,
       setScenario: setScenario,
       getCurrentUnit: getCurrentUnit,
+      getUnitByIndex: getUnitByIndex,
       getUnitByUUID: getUnitByUUID,
-      setCurrentUnitUUID: setCurrentUnitUUID
+      setCurrentUnitIndex: setCurrentUnitIndex
     };
   })
 
@@ -288,8 +293,6 @@ angular.module('starter', ['ionic'])
         parameterList: [],
         value: 32
       }, false);
-
-      $scope.$apply();
     };
 
     /**

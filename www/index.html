@@ -37,11 +37,11 @@
   <script id="cards.html" type="text/ng-template">
     <ion-view view-title="MOTIVATE Mobile Client">
       <ion-content class="padding">
-        <div class="list card" ng-repeat="unit in scenarioService.getUnits() | orderBy:'-_state.new'" ng-hide="unit._state.hide">
+        <div class="list card" ng-repeat="unit in scenarioService.getUnits()" ng-hide="unit._state.hide">
           <div class="item item-divider">
             {{unit._name}}
           </div>
-          <a href="#/content" class="item item-icon-right" ng-click="scenarioService.setCurrentUnitUUID(unit._uuid)">
+          <a href="#/content" class="item item-icon-right" ng-click="scenarioService.setCurrentUnitIndex($index)">
             <i class="icon ion-chevron-right"></i>
             {{unit._description}}</p>
           </a>
