@@ -1,4 +1,4 @@
-define(['contactJS', './WidgetCreator'], function (contactJS, creator) {
+define(['contactJS', './WidgetCreator', 'jquery'], function (contactJS, creator, $) {
     return (function() {
         return creator.extend("ScanWidget", {
             description : {
@@ -12,6 +12,24 @@ define(['contactJS', './WidgetCreator'], function (contactJS, creator) {
                 updateInterval: 5000
             },
             simpleQueryGenerator: function(callback) {
+                var foundDevice = function() {
+                    callback({});
+                };
+                var missingDevice = function(a, b, c, d, e) {
+                    if (c === "Unauthorized") {
+                        callback({0: ["ThermoGod_30B"]});
+                    } else {
+                        callback({});
+                    }
+                };
+
+                $.ajax({
+                    url: "http://91.64.29.199:3482/",
+                    success: foundDevice,
+                    error: missingDevice
+                });
+
+                /*
                 var success = function(devices) {
                     var result = [];
                     for (var index in devices) {
@@ -29,6 +47,7 @@ define(['contactJS', './WidgetCreator'], function (contactJS, creator) {
                         numLevels: true
                     }, success, error)
                 }, error);
+                */
             }
         });
     })();
