@@ -272,7 +272,7 @@ angular.module('starter', ['ionic'])
               console.log("</newcontextinformation>");
             });
 
-            adaptationEngine.startRuleMatching(5000);
+            adaptationEngine.startRuleMatching(10000);
           },
           error: function (jqXHR, textStatus, errorThrown) {
             console.log(errorThrown);
