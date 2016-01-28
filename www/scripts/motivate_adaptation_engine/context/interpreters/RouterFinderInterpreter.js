@@ -24,7 +24,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                     {
                         'name': 'CI_AVAILABLE_DEVICE',
                         'type': 'BOOLEAN',
-                        'parameterList': [["CP_UNIT", "STRING", "ROUTER"]]
+                        'parameterList': [["CP_DEVICE", "STRING", "ROUTER"]]
                     }
                 ]
             },
