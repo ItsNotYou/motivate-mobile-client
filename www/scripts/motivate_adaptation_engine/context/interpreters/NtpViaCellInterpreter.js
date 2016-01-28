@@ -31,7 +31,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
 
                 if (connection === 'cell' && available === true){
                     result = "true";
-                }else if (connection !== 'cell' && available === true){
+                }else if (connection === 'cell' && available === false){
                     result = "false";
                 }else {
                     result = undefined;

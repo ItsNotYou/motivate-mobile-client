@@ -32,7 +32,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
 
                 if (connection === 'wifi' && available === true){
                     result = "true";
-                }else if (connection !== 'wifi' && available === true){
+                }else if (connection === 'wifi' && available === false){
                     result = "false";
                 }else {
                     result = undefined;
