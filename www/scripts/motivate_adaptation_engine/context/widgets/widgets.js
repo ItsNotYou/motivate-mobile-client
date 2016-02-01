@@ -9,6 +9,7 @@ define([
   './RouterFinderWidget',
   './ScanWidget',
   './SupportKeywordWidget',
+  './Trovis5573FinderWidget',
   './WifiEnabledWidget'
 ], function() {
     return arguments;
