@@ -282,12 +282,13 @@ angular.module('starter', ['ionic', 'ngAnimate'])
     $scope.fireFirstAction = function () {
       console.log("Fire Action 1!");
 
-      adaptationEngine.addContextInformation({
-        name: "CI_USER_AGE",
-        type: "INTEGER",
-        parameterList: [],
-        value: 32
-      }, false);
+      for (var index in learningUnitState) {
+        var unit = learningUnitState[index];
+        if (unit) {
+          unit.hide = true;
+          unit.new = true;
+        }
+      }
 
       $scope.$apply();
     };
