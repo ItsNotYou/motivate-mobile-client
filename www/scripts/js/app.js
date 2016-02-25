@@ -289,8 +289,6 @@ angular.module('starter', ['ionic', 'ngAnimate'])
           unit.new = true;
         }
       }
-
-      $scope.$apply();
     };
 
     /**
