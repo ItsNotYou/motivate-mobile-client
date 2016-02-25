@@ -50,6 +50,14 @@ angular.module('starter', ['ionic', 'ngAnimate'])
       return scenario._units;
     };
 
+    var getVisibleUnitCount = function() {
+      var visibilityCount = 0;
+      for (var i = 0; i < scenario._units.length; i++) {
+        if (!scenario._units[i]._state.hide) visibilityCount++;
+      }
+      return visibilityCount;
+    };
+
     var getCurrentUnit = function () {
       return getUnitByUUID(currentUnitUUID);
     };
@@ -74,7 +82,8 @@ angular.module('starter', ['ionic', 'ngAnimate'])
       setScenario: setScenario,
       getCurrentUnit: getCurrentUnit,
       getUnitByUUID: getUnitByUUID,
-      setCurrentUnitUUID: setCurrentUnitUUID
+      setCurrentUnitUUID: setCurrentUnitUUID,
+      getVisibleUnitCount: getVisibleUnitCount
     };
   })
 

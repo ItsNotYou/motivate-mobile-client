@@ -37,6 +37,9 @@
   <script id="cards.html" type="text/ng-template">
     <ion-view view-title="MOTIVATE Mobile Client">
       <ion-content class="padding">
+        <div class="item item-divider" ng-hide="scenarioService.getVisibleUnitCount()">
+          Leider sind derzeit keine Informationen verfügbar
+        </div>
         <div class="list card learning-unit-card" ng-repeat="unit in scenarioService.getUnits() | orderBy:'-_state.new'" ng-hide="unit._state.hide">
           <div class="item item-divider">
             {{unit._name}}
