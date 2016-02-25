@@ -286,7 +286,6 @@ angular.module('starter', ['ionic', 'ngAnimate'])
         var unit = learningUnitState[index];
         if (unit) {
           unit.hide = true;
-          unit.new = true;
         }
       }
     };
