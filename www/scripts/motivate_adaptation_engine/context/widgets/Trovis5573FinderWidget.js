@@ -20,7 +20,7 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
             };
 
             $.ajax({
-                url: "http://91.64.29.199:3482/",
+                url: "http://192.168.178.35/",
                 success: checkForAuth,
                 error: checkForAuth,
                 timeout: 3000,

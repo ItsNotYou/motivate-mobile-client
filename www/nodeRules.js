@@ -3,12 +3,12 @@ var _d = new _contactJS.Discoverer();
 
 var _rules = [
 	{
-		"id": "f2037301-b50b-4f1d-86d4-9a1b37357b2f",
+		"id": "0f6eb380-cfc9-4600-b509-baea21404923",
 		"relatedContextInformation": [
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_SUPPORT_KEYWORD", type: "STRING", parameterList: []}),
 ],
 		"condition": function(R) {
-			R.when((this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_SUPPORT_KEYWORD", type: "STRING", parameterList: []}), "", "zeit")));
+			R.when((this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_SUPPORT_KEYWORD", type: "STRING", parameterList: []}), "", "time")));
 		},
 		"consequence": function(R) {
 			if (typeof window["ruleEngine"]._callbacks["selectLearningUnitCallback"] != "undefined") {
@@ -18,7 +18,38 @@ _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_S
 		}
 	},
 	{
-		"id": "da8a2ada-4ed1-4ec2-945f-26cb799b9b00",
+		"id": "cd39b2e3-6e8c-4c1f-9b17-43d2a603cd46",
+		"relatedContextInformation": [
+_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_NTP_REQUIRED", type: "BOOLEAN", parameterList: []}),
+_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_WIFI"]]}),
+],
+		"condition": function(R) {
+			R.when((this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_NTP_REQUIRED", type: "BOOLEAN", parameterList: []}), "==", "true") && this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_WIFI"]]}), "==", "false")));
+		},
+		"consequence": function(R) {
+			if (typeof window["ruleEngine"]._callbacks["selectLearningUnitCallback"] != "undefined") {
+		window["ruleEngine"]._callbacks["selectLearningUnitCallback"]("unitcd9eff2a-ab5a-41cc-b91d-2d6db33a25fe", null);
+	}
+			R.next();
+		}
+	},
+	{
+		"id": "9e5e32e7-40e2-4b68-9406-c476c6999f36",
+		"relatedContextInformation": [
+_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_DEVICE", type: "BOOLEAN", parameterList: [["CP_DEVICE", "STRING", "TROVIS_5573"]]}),
+],
+		"condition": function(R) {
+			R.when((this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_DEVICE", type: "BOOLEAN", parameterList: [["CP_DEVICE", "STRING", "TROVIS_5573"]]}), "==", "false")));
+		},
+		"consequence": function(R) {
+			if (typeof window["ruleEngine"]._callbacks["selectLearningUnitCallback"] != "undefined") {
+		window["ruleEngine"]._callbacks["selectLearningUnitCallback"]("unit462333bc-d90e-4195-8718-b92ec1949945", null);
+	}
+			R.next();
+		}
+	},
+	{
+		"id": "5d7c1166-6ebe-44bc-a2c7-d7fc103579f9",
 		"relatedContextInformation": [
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_CELL"]]}),
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_NTP_REQUIRED", type: "BOOLEAN", parameterList: []}),
@@ -34,7 +65,7 @@ _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_N
 		}
 	},
 	{
-		"id": "24aebf55-c9cb-49c1-ab98-ab47cf676a25",
+		"id": "b780278e-c3e5-4ab4-9ef5-fced1b559cf3",
 		"relatedContextInformation": [
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_NTP_REQUIRED", type: "BOOLEAN", parameterList: []}),
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_CELL"]]}),
@@ -50,7 +81,7 @@ _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_A
 		}
 	},
 	{
-		"id": "a7c30a60-d2de-4200-927c-b4738d41a0b1",
+		"id": "86a7b3ad-a687-4aaf-a312-f6ada69026e4",
 		"relatedContextInformation": [
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_FINISHED_LEARNING_UNIT", type: "STRING", parameterList: []}),
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_WIFI"]]}),
@@ -66,7 +97,7 @@ _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_A
 		}
 	},
 	{
-		"id": "09ce948f-1710-4953-9308-96c337241250",
+		"id": "951f049d-d5e8-4c23-832f-1e506cdfdd7e",
 		"relatedContextInformation": [
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_CURRENT_LEARNING_UNIT", type: "STRING", parameterList: []}),
 ],
@@ -76,37 +107,6 @@ _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_C
 		"consequence": function(R) {
 			if (typeof window["ruleEngine"]._callbacks["preloadLearningUnitCallback"] != "undefined") {
 		window["ruleEngine"]._callbacks["preloadLearningUnitCallback"]("unitcd9eff2a-ab5a-41cc-b91d-2d6db33a25fe", null);
-	}
-			R.next();
-		}
-	},
-	{
-		"id": "ff40a26d-3d68-432e-8cbb-6418d6e90779",
-		"relatedContextInformation": [
-_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_DEVICE", type: "BOOLEAN", parameterList: [["CP_DEVICE", "STRING", "CONTROLLER"]]}),
-],
-		"condition": function(R) {
-			R.when((this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_DEVICE", type: "BOOLEAN", parameterList: [["CP_DEVICE", "STRING", "CONTROLLER"]]}), "==", "false")));
-		},
-		"consequence": function(R) {
-			if (typeof window["ruleEngine"]._callbacks["selectLearningUnitCallback"] != "undefined") {
-		window["ruleEngine"]._callbacks["selectLearningUnitCallback"]("unit462333bc-d90e-4195-8718-b92ec1949945", null);
-	}
-			R.next();
-		}
-	},
-	{
-		"id": "4b5e4d3d-224b-416f-b3be-9efdd5ee30de",
-		"relatedContextInformation": [
-_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_WIFI"]]}),
-_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_NTP_REQUIRED", type: "BOOLEAN", parameterList: []}),
-],
-		"condition": function(R) {
-			R.when((this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_WIFI"]]}), "==", "false") && this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_NTP_REQUIRED", type: "BOOLEAN", parameterList: []}), "==", "true")));
-		},
-		"consequence": function(R) {
-			if (typeof window["ruleEngine"]._callbacks["selectLearningUnitCallback"] != "undefined") {
-		window["ruleEngine"]._callbacks["selectLearningUnitCallback"]("unitcd9eff2a-ab5a-41cc-b91d-2d6db33a25fe", null);
 	}
 			R.next();
 		}
