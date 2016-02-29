@@ -3,7 +3,23 @@ var _d = new _contactJS.Discoverer();
 
 var _rules = [
 	{
-		"id": "0f6eb380-cfc9-4600-b509-baea21404923",
+		"id": "a2c1dcb1-ef41-4523-b85e-ab134461b45b",
+		"relatedContextInformation": [
+_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_NTP_REQUIRED", type: "BOOLEAN", parameterList: []}),
+_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_CELL"]]}),
+],
+		"condition": function(R) {
+			R.when((this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_NTP_REQUIRED", type: "BOOLEAN", parameterList: []}), "==", "true") && this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_CELL"]]}), "==", "true")));
+		},
+		"consequence": function(R) {
+			if (typeof window["ruleEngine"]._callbacks["selectLearningUnitCallback"] != "undefined") {
+		window["ruleEngine"]._callbacks["selectLearningUnitCallback"]("unit79be15b9-f9ab-4979-8263-7f624f3aa701", null);
+	}
+			R.next();
+		}
+	},
+	{
+		"id": "af13f02a-f157-482d-b22e-f5a85ec829fa",
 		"relatedContextInformation": [
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_SUPPORT_KEYWORD", type: "STRING", parameterList: []}),
 ],
@@ -18,13 +34,13 @@ _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_S
 		}
 	},
 	{
-		"id": "cd39b2e3-6e8c-4c1f-9b17-43d2a603cd46",
+		"id": "c812e20d-7058-4703-8f7a-2c5bf318f4a1",
 		"relatedContextInformation": [
-_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_NTP_REQUIRED", type: "BOOLEAN", parameterList: []}),
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_WIFI"]]}),
+_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_NTP_REQUIRED", type: "BOOLEAN", parameterList: []}),
 ],
 		"condition": function(R) {
-			R.when((this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_NTP_REQUIRED", type: "BOOLEAN", parameterList: []}), "==", "true") && this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_WIFI"]]}), "==", "false")));
+			R.when((this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_WIFI"]]}), "==", "false") && this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_NTP_REQUIRED", type: "BOOLEAN", parameterList: []}), "==", "true")));
 		},
 		"consequence": function(R) {
 			if (typeof window["ruleEngine"]._callbacks["selectLearningUnitCallback"] != "undefined") {
@@ -34,7 +50,7 @@ _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_A
 		}
 	},
 	{
-		"id": "9e5e32e7-40e2-4b68-9406-c476c6999f36",
+		"id": "678ce953-3b60-48e5-860f-fae274e99e41",
 		"relatedContextInformation": [
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_DEVICE", type: "BOOLEAN", parameterList: [["CP_DEVICE", "STRING", "TROVIS_5573"]]}),
 ],
@@ -49,23 +65,38 @@ _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_A
 		}
 	},
 	{
-		"id": "5d7c1166-6ebe-44bc-a2c7-d7fc103579f9",
+		"id": "019c01df-51f0-49da-9d12-ffd105c513c3",
 		"relatedContextInformation": [
-_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_CELL"]]}),
-_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_NTP_REQUIRED", type: "BOOLEAN", parameterList: []}),
+_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_FINISHED_LEARNING_UNIT", type: "STRING", parameterList: []}),
+_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_DEVICE", type: "BOOLEAN", parameterList: [["CP_DEVICE", "STRING", "TROVIS_5573"]]}),
 ],
 		"condition": function(R) {
-			R.when((this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_CELL"]]}), "==", "true") && this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_NTP_REQUIRED", type: "BOOLEAN", parameterList: []}), "==", "true")));
+			R.when((this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_FINISHED_LEARNING_UNIT", type: "STRING", parameterList: []}), "==", "unit462333bc-d90e-4195-8718-b92ec1949945")) && (this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_DEVICE", type: "BOOLEAN", parameterList: [["CP_DEVICE", "STRING", "TROVIS_5573"]]}), "==", "true")));
 		},
 		"consequence": function(R) {
 			if (typeof window["ruleEngine"]._callbacks["selectLearningUnitCallback"] != "undefined") {
-		window["ruleEngine"]._callbacks["selectLearningUnitCallback"]("unit490c7966-3286-46ea-9f24-12dc7fdc04fb", null);
+		window["ruleEngine"]._callbacks["selectLearningUnitCallback"]("unitc7920511-e873-4eb2-856b-be250773211e", null);
 	}
 			R.next();
 		}
 	},
 	{
-		"id": "b780278e-c3e5-4ab4-9ef5-fced1b559cf3",
+		"id": "fc992482-ac55-41cb-909c-65fbda72fd44",
+		"relatedContextInformation": [
+_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_CURRENT_LEARNING_UNIT", type: "STRING", parameterList: []}),
+],
+		"condition": function(R) {
+			R.when((this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_CURRENT_LEARNING_UNIT", type: "STRING", parameterList: []}), "==", "unitc7920511-e873-4eb2-856b-be250773211e")));
+		},
+		"consequence": function(R) {
+			if (typeof window["ruleEngine"]._callbacks["preloadLearningUnitCallback"] != "undefined") {
+		window["ruleEngine"]._callbacks["preloadLearningUnitCallback"]("unit462333bc-d90e-4195-8718-b92ec1949945", null);
+	}
+			R.next();
+		}
+	},
+	{
+		"id": "3d3b933d-41b5-45e6-9ebc-e0b305aa0dba",
 		"relatedContextInformation": [
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_NTP_REQUIRED", type: "BOOLEAN", parameterList: []}),
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_CELL"]]}),
@@ -81,7 +112,7 @@ _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_A
 		}
 	},
 	{
-		"id": "86a7b3ad-a687-4aaf-a312-f6ada69026e4",
+		"id": "29559435-0cc3-4a5d-8f33-f5ce0636e319",
 		"relatedContextInformation": [
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_FINISHED_LEARNING_UNIT", type: "STRING", parameterList: []}),
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_WIFI"]]}),
@@ -97,7 +128,7 @@ _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_A
 		}
 	},
 	{
-		"id": "951f049d-d5e8-4c23-832f-1e506cdfdd7e",
+		"id": "e62684b9-b388-4d74-b5af-22e9f238147b",
 		"relatedContextInformation": [
 _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_CURRENT_LEARNING_UNIT", type: "STRING", parameterList: []}),
 ],
@@ -107,6 +138,37 @@ _contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_C
 		"consequence": function(R) {
 			if (typeof window["ruleEngine"]._callbacks["preloadLearningUnitCallback"] != "undefined") {
 		window["ruleEngine"]._callbacks["preloadLearningUnitCallback"]("unitcd9eff2a-ab5a-41cc-b91d-2d6db33a25fe", null);
+	}
+			R.next();
+		}
+	},
+	{
+		"id": "bed6540e-fea5-4c0c-8d86-d97bbee2469b",
+		"relatedContextInformation": [
+_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_FINISHED_LEARNING_UNIT", type: "STRING", parameterList: []}),
+_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_CELL"]]}),
+],
+		"condition": function(R) {
+			R.when((this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_FINISHED_LEARNING_UNIT", type: "STRING", parameterList: []}), "==", "unit901b61b2-9397-4eec-80c0-0b248ceffde4")) && (this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_AVAILABLE_NTP", type: "BOOLEAN", parameterList: [["CP_CONNECTION_TYPE", "STRING", "CONNECTION_CELL"]]}), "==", "true")));
+		},
+		"consequence": function(R) {
+			if (typeof window["ruleEngine"]._callbacks["selectLearningUnitCallback"] != "undefined") {
+		window["ruleEngine"]._callbacks["selectLearningUnitCallback"]("unita974fc8c-04bb-462d-b961-4a8de6e7e725", null);
+	}
+			R.next();
+		}
+	},
+	{
+		"id": "b03a3b9d-6705-4a06-a46e-1a2195c37870",
+		"relatedContextInformation": [
+_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_CURRENT_LEARNING_UNIT", type: "STRING", parameterList: []}),
+],
+		"condition": function(R) {
+			R.when((this.fulfils(_contactJS.ContextInformation.fromContextInformationDescription(_d, {name: "CI_CURRENT_LEARNING_UNIT", type: "STRING", parameterList: []}), "==", "unita974fc8c-04bb-462d-b961-4a8de6e7e725")));
+		},
+		"consequence": function(R) {
+			if (typeof window["ruleEngine"]._callbacks["preloadLearningUnitCallback"] != "undefined") {
+		window["ruleEngine"]._callbacks["preloadLearningUnitCallback"]("unit901b61b2-9397-4eec-80c0-0b248ceffde4", null);
 	}
 			R.next();
 		}
