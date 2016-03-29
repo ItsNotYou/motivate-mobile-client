@@ -7,16 +7,39 @@ ion-header-bar {
 }
 .title {
     color: white !important;
+    font-family: Verdana;
+}
+.back-text {
+    color: white !important;
+}
+.icon.ion-ios-arrow-back {
+    color: white !important;
+}
+.icon.ion-ios-arrow-back::before {
+    font-size: 24px !important;
 }
 
 /* Right arrow on learning units (open unit) */
 .item-icon-right .icon {
     font-size: 16px !important;
+    background-color: #E1E1E1;
+}
+
+.item-icon-right {
+    background-color: #E1E1E1;
+    padding-bottom: 30px;
+}
+
+/* appearance of the learning units */
+.item-divider {
+    background-color: #E1E1E1;
+    font-family: Verdana;
 }
 
 /* Learning unit overview */
 ion-content {
     padding: 0 !important;
+    background-color: #E1E1E1;
 }
 .learning-unit-card {
     margin: 0 !important;
