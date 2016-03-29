@@ -1,0 +1,23 @@
+/* equeo specific css rules to mimic equeos corporate design */
+
+/* App title and title bar */
+ion-header-bar {
+    background-color: #101F43 !important;
+    border: none !important;
+}
+.title {
+    color: white !important;
+}
+
+/* Right arrow on learning units (open unit) */
+.item-icon-right .icon {
+    font-size: 16px !important;
+}
+
+/* Learning unit overview */
+ion-content {
+    padding: 0 !important;
+}
+.learning-unit-card {
+    margin: 0 !important;
+}
