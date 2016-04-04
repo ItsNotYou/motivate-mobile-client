@@ -10,6 +10,7 @@ define([
   './ScanWidget',
   './SupportKeywordWidget',
   './Trovis5573FinderWidget',
+  './TrovisConnectionWidget',
   './WifiEnabledWidget'
 ], function() {
     return arguments;
