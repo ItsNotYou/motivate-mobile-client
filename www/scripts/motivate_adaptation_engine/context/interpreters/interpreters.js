@@ -8,6 +8,8 @@ define([
   './NtpViaWifiInterpreter',
   './RouterFinderInterpreter',
   './ThermoFinderInterpreter',
+  './TimeInterpreter',
+  './TrovisConnectedInterpreter',
   './WifiUiInterpreter'
 ], function() {
     return arguments;
