@@ -66,3 +66,19 @@ ion-content {
 .learning-unit-content #gridcontainer {
     background-color: #FFFFFF !important;
 }
+
+/* Button "Hide old units" */
+.hide-old-units {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border: none;
+    color: #000000 !important;
+}
+.bar-footer {
+    background-color: #F1F1F1 !important;
+    border-top-style: solid !important;
+    border-top-width: 3px !important;
+    border-color: #E1E1E1 !important;
+    padding: 0;
+}
