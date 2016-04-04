@@ -23,7 +23,14 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 ]
             },
             simpleInterpretData: function(values, callback) {
-                var connection;
+                var connection = values[0];
+                console.log("Tini: Trovis_Values" + connection);
+
+                if (connection === "false" || connection === undefined){
+                    callback({0: "false"});
+                } else {
+                    callback({0: "true"});
+                }
             }
         });
     })();
