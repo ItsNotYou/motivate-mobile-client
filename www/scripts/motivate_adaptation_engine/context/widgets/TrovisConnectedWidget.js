@@ -21,19 +21,21 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
                 //data ist der parameter der den inhalt der html seite durch ajax übergeben bekommt
 
                 var connected = $("tr:first-child td:nth-child(2)").html(data);
-                console.log("Tini: html-Data - " + connected);
+                //console.log("Tini: html-Data - " + connected);
 
                 if (connected === "NA"){
                     callback({0: "false"});
-                }else {
+                }else {//if (connected != "NA"){
                     callback({0: connected});
+                //}else {
+                //    callback({0: undefined});
                 }
 
             };
 
-            var error = function(x,y,z) {
-                callback({0: undefined});
-            }
+            var error = function (xhr, ajaxOptions, thrownError) {
+                alert(request.responseText);
+            };
 
 
             $.ajax({

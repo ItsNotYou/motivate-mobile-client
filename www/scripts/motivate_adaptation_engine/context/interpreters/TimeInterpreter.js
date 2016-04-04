@@ -33,8 +33,10 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
 
                 if (trovis_time === device_time){
                     callback({0: "true"});
-                } else {
+                } else if (trovis_time != device_time){
                     callback({0: "false"});
+                } else {
+                    callback({0: undefined})
                 }
             }
         });

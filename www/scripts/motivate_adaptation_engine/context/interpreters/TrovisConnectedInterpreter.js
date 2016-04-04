@@ -28,8 +28,10 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
 
                 if (connection === "false" || connection === undefined){
                     callback({0: "false"});
-                } else {
+                } else if (connection != "false" && connection != undefined){
                     callback({0: "true"});
+                } else {
+                    callback({0: undefined});
                 }
             }
         });
