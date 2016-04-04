@@ -33,10 +33,10 @@ ion-header-bar {
     padding-bottom: 30px;
 }
 
-/* appearance of the learning units */
+/* "No units available" text */
 .item-divider {
-    background-color: #F1F1F1;
-    font-family: Verdana;
+    background-color: #FFFFFF;
+    border: none;
 }
 
 /* Learning unit overview */
