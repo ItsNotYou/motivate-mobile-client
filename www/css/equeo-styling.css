@@ -15,6 +15,9 @@ ion-header-bar {
 .icon.ion-ios-arrow-back {
     color: white !important;
 }
+.icon.ion-android-arrow-back {
+    color: white !important;
+}
 .icon.ion-ios-arrow-back::before {
     font-size: 24px !important;
 }
@@ -22,25 +25,44 @@ ion-header-bar {
 /* Right arrow on learning units (open unit) */
 .item-icon-right .icon {
     font-size: 16px !important;
-    background-color: #E1E1E1;
+    background-color: #F1F1F1;
 }
 
 .item-icon-right {
-    background-color: #E1E1E1;
+    background-color: #F1F1F1;
     padding-bottom: 30px;
 }
 
 /* appearance of the learning units */
 .item-divider {
-    background-color: #E1E1E1;
+    background-color: #F1F1F1;
     font-family: Verdana;
 }
 
 /* Learning unit overview */
 ion-content {
     padding: 0 !important;
-    background-color: #E1E1E1;
+    background-color: #FFFFFF;
+}
+.learning-unit-card .unit-title {
+    font-family: Verdana;
 }
 .learning-unit-card {
     margin: 0 !important;
+    box-shadow: none !important;
+    border-bottom-style: solid !important;
+    border-bottom-width: 3px !important;
+    border-color: #E1E1E1 !important;
+    border-radius: 0 !important;
+}
+.learning-unit-card .unit-state-new {
+    right: 40px !important;
+}
+
+/* Learning unit content */
+.learning-unit-content .gridelement {
+    box-shadow: none !important;
+}
+.learning-unit-content #gridcontainer {
+    background-color: #FFFFFF !important;
 }
