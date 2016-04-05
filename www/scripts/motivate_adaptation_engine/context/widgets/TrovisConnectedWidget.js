@@ -20,6 +20,7 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
             var checkConnected = function(data) {
                 //data ist der parameter der den inhalt der html seite durch ajax übergeben bekommt
 
+                // TODO: Daten abrufen anstatt zu setzen
                 var connected = $("tr:first-child td:nth-child(2)").html(data);
                 //console.log("Tini: html-Data - " + connected);
 

@@ -11,11 +11,12 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                         //TrovisConnectedWidget
                         'name': 'CI_DEVICE_DATA',
                         'type': 'OBJECT',
-                        'parameterList': [["CP_UNIT", "STRING", "TROVIS_DATA"]]
+                        'parameterList': [["CP_UNIT", "STRING", "TROVIS_DATA"]] // TODO: CP_DEVICE statt CP_UNIT
                     }
                 ],
                 out: [
                     {
+                        // TODO: Kontextdaten an Trovis5573FinderWidget anpassen
                         'name': 'CI_AVAILABLE_TROVIS',
                         'type': 'BOOLEAN',
                         'parameterList': [["CP_DEVICE", "STRING", "TROVIS_CONNECTED"]]
