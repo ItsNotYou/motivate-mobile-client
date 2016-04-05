@@ -17,6 +17,15 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
         simpleQueryGenerator: function(callback) {
             var login = "Basic "+bota("admin:admin");
 
+            $.ajax({
+                url: "http://192.168.178.35/",
+                headers: {'Authorization':'login'},
+                success: checkConnected,
+                error: error,
+                timeout: 3000,
+                crossDomain: true
+            });
+
             var checkConnected = function(data) {
                 //data ist der parameter der den inhalt der html seite durch ajax übergeben bekommt
 
@@ -59,16 +68,6 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
                 $(this).css("display","inline");
                 $(this).html(message);
             };
-
-
-            $.ajax({
-                url: "http://192.168.178.35/",
-                headers: {Authorization:login},
-                success: checkConnected,
-                error: error,
-                timeout: 3000,
-                crossDomain: true
-            });
         }
     });
 });
