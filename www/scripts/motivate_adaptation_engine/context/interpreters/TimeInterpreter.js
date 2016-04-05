@@ -11,7 +11,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                         //TrovisConnectedWidget
                         'name': 'CI_DEVICE_DATA',
                         'type': 'OBJECT',
-                        'parameterList': [["CP_UNIT", "STRING", "TROVIS_DATA"]]
+                        'parameterList': [["CP_UNIT", "STRING", "TROVIS_DATA"]] // TODO: CP_DEVICE statt CP_UNIT
                     }
                 ],
                 out: [
@@ -31,6 +31,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 console.log("Tini: Datum - " + date);
                 console.log("Tini: Mobile Zeit -" + device_time);
 
+                // TODO: Der Zeitvergleich muss mit einem gewissen Akzeptanz-Delta durchgeführt werden
                 if (trovis_time === device_time){
                     callback({0: "true"});
                 } else if (trovis_time != device_time){

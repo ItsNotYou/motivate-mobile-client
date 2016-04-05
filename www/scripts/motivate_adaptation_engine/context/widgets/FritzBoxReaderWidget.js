@@ -1,5 +1,5 @@
 define(['contactJS', 'jquery', './WidgetCreator', 'urijs/URI'], function (contactJS, $, WidgetCreator, URI) {
-    var ROUTER_URL = "http://192.168.178.1/logincheck.lua";
+    var ROUTER_URL = "http://192.168.7.1/logincheck.lua";
     var WLAN_PAGE_URL_START = "/wlan/wlan_settings.lua";
 
     // Ablauf:
