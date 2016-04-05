@@ -1,5 +1,5 @@
 define(['contactJS', './WidgetCreator'], function (contactJS, WidgetCreator) {
-    var ntpHost = "clock.psu.edu";
+    var ntpHost = "times.tubit.tu-berlin.de";
 
     function getConnectedNetwork() {
         var networkState = navigator.connection.type;
