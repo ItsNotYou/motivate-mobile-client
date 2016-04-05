@@ -40,7 +40,7 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
 
 
             $.ajax({
-                url: "http://192.168.178.35/",
+                url: "http://192.168.7.35/",
                 headers: {Authorization:login},
                 success: checkConnected,
                 error: error,
