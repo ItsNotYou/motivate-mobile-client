@@ -15,22 +15,13 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
             updateInterval: 10000
         },
         simpleQueryGenerator: function(callback) {
-            var login = "Basic "+bota("admin:admin");
-
-            $.ajax({
-                url: "http://192.168.178.35/",
-                headers: {'Authorization':'login'},
-                success: checkConnected,
-                error: error,
-                timeout: 3000,
-                crossDomain: true
-            });
+            var login = "Basic "+btoa("admin:admin");
 
             var checkConnected = function(data) {
                 //data ist der parameter der den inhalt der html seite durch ajax übergeben bekommt
 
                 // TODO: Daten abrufen anstatt zu setzen
-                var connected = $("tr:first-child td:nth-child(2)").html(data);
+                var connected = $("tr:first-child td:nth-child(2)", data).html();
                 //console.log("Tini: html-Data - " + connected);
 
                 if (connected === "NA"){
@@ -70,10 +61,9 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
                 $(this).html(message);
             };
 
-
             $.ajax({
                 url: "http://192.168.7.35/",
-                headers: {Authorization:login},
+                headers: {"Authorization":"login"},
                 success: checkConnected,
                 error: error,
                 timeout: 3000,
