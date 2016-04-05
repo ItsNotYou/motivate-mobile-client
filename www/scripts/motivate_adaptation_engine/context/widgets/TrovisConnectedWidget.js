@@ -15,13 +15,14 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
             updateInterval: 10000
         },
         simpleQueryGenerator: function(callback) {
-            var login = "Basic "+bota("admin:admin");
+            var login = "Basic " + btoa("admin:admin");
 
             var checkConnected = function(data) {
+                alert("Daten korrekt bekommen");
                 //data ist der parameter der den inhalt der html seite durch ajax übergeben bekommt
 
                 // TODO: Daten abrufen anstatt zu setzen
-                var connected = $("tr:first-child td:nth-child(2)").html(data);
+                var connected = $("tr:first-child td:nth-child(2)", data).html();
                 //console.log("Tini: html-Data - " + connected);
 
                 if (connected === "NA"){
@@ -35,7 +36,7 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
             };
 
             var error = function (xhr, ajaxOptions, thrownError) {
-                alert(request.responseText);
+                alert("Uiuiui Fehler");
             };
 
 
