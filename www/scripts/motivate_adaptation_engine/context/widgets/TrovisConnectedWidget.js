@@ -15,27 +15,29 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
             updateInterval: 10000
         },
         simpleQueryGenerator: function(callback) {
-            var login = "Basic "+btoa("admin:admin");
+            var host = "http://192.168.7.35/";
+            var login = "Basic " + btoa("admin:admin");
+            var timeSelector = "tr:first-child td:nth-child(2)";
 
-            var checkConnected = function(data) {
-                //data ist der parameter der den inhalt der html seite durch ajax übergeben bekommt
-
-                // TODO: Daten abrufen anstatt zu setzen
-                var connected = $("tr:first-child td:nth-child(2)", data).html();
-                //console.log("Tini: html-Data - " + connected);
-
-                if (connected === "NA"){
-                    callback({0: "false"});
-                }else {//if (connected != "NA"){
-                    callback({0: connected});
-                //}else {
-                //    callback({0: undefined});
+            var publishResult = function(data, error) {
+                var connected = "true";
+                if (error) {
+                    // It seems we don't have any response. Slow Pi or no Pi?
+                    connected = undefined;
+                } else {
+                    // We have some data to process
+                    var time = $.trim($(timeSelector, data).html());
+                    // If we don't have a time we are not connected
+                    connected = time === "NA" ? "false" : "true";
                 }
 
+                callback({0: {
+                    host: host,
+                    data: data,
+                    connected: connected
+                }});
             };
 
-            var error = function(e, x, settings, exception) {
-                var message;
                 var statusErrorMap = {
                     '400' : "Server understood the request, but request content was invalid.",
                     '401' : "Unauthorized access.",
@@ -59,15 +61,13 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
                 }
                 $(this).css("display","inline");
                 $(this).html(message);
-            };
-
             $.ajax({
-                url: "http://192.168.7.35/",
+                url: host,
                 headers: {"Authorization":"login"},
-                success: checkConnected,
-                error: error,
-                timeout: 3000,
-                crossDomain: true
+                timeout: 10000,
+                crossDomain: true,
+                success: function(data) { publishResult(data, false); },
+                error: function() { publishResult(undefined, true); }
             });
         }
     });
