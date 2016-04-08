@@ -22,7 +22,7 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
             var publishResult = function(data, error) {
                 var connected = "true";
                 if (error) {
-                    // It seems we can't reach the Raspberry Pi
+                    // It seems we don't have any response. Slow Pi or no Pi?
                     connected = undefined;
                 } else {
                     // We have some data to process
@@ -41,7 +41,7 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
             $.ajax({
                 url: host,
                 headers: {Authorization:login},
-                timeout: 45000,
+                timeout: 10000,
                 crossDomain: true,
                 success: function(data) { publishResult(data, false); },
                 error: function() { publishResult(undefined, true); }
