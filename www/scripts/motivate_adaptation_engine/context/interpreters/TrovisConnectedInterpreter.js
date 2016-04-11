@@ -11,15 +11,14 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                         //TrovisConnectedWidget
                         'name': 'CI_DEVICE_DATA',
                         'type': 'OBJECT',
-                        'parameterList': [["CP_UNIT", "STRING", "TROVIS_DATA"]] // TODO: CP_DEVICE statt CP_UNIT
+                        'parameterList': [["CP_DEVICE", "STRING", "TROVIS_DATA"]]
                     }
                 ],
                 out: [
                     {
-                        // TODO: Kontextdaten an Trovis5573FinderWidget anpassen
-                        'name': 'CI_AVAILABLE_TROVIS',
+                        'name': 'CI_AVAILABLE_DEVICE',
                         'type': 'BOOLEAN',
-                        'parameterList': [["CP_DEVICE", "STRING", "TROVIS_CONNECTED"]]
+                        'parameterList': [["CP_DEVICE", "STRING", "TROVIS_5573"]]
                     }
                 ]
             },
@@ -29,10 +28,8 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
 
                 if (connection === "false" || connection === undefined){
                     callback({0: "false"});
-                } else if (connection != "false" && connection != undefined){
-                    callback({0: "true"});
                 } else {
-                    callback({0: undefined});
+                    callback({0: "true"});
                 }
             }
         });

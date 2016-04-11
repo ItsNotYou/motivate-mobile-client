@@ -11,7 +11,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                         //TrovisConnectedWidget
                         'name': 'CI_DEVICE_DATA',
                         'type': 'OBJECT',
-                        'parameterList': [["CP_UNIT", "STRING", "TROVIS_DATA"]] // TODO: CP_DEVICE statt CP_UNIT
+                        'parameterList': [["CP_DEVICE", "STRING", "TROVIS_DATA"]]
                     }
                 ],
                 out: [
@@ -25,19 +25,19 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
             simpleInterpretData: function(values, callback) {
                 var trovis_time = values[0];
                 var date = new Date();
+                //device time without seconds or am/pm
                 var device_time = date.toLocaleTimeString(navigator.language, {hour: '2-digit', minute: '2-digite'}).replace(/(:\d{2}| [AP]M)$/, "");
+                alert(device_time);
 
-                console.log("Tini: Trovis Zeit - "+ trovis_time);
-                console.log("Tini: Datum - " + date);
-                console.log("Tini: Mobile Zeit -" + device_time);
+                //console.log("Tini: Trovis Zeit - "+ trovis_time);
+                //console.log("Tini: Datum - " + date);
+                //console.log("Tini: Mobile Zeit -" + device_time);
 
-                // TODO: Der Zeitvergleich muss mit einem gewissen Akzeptanz-Delta durchgeführt werden
+                // TODO: Der Zeitvergleich muss mit einem gewissen Akzeptanz-Delta durchgefuehrt werden
                 if (trovis_time === device_time){
                     callback({0: "true"});
-                } else if (trovis_time != device_time){
-                    callback({0: "false"});
                 } else {
-                    callback({0: undefined})
+                    callback({0: "false"});
                 }
             }
         });
