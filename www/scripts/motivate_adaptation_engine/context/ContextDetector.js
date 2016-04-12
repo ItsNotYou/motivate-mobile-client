@@ -85,9 +85,9 @@ define("MoCD", ['MoRE', 'nools', 'jquery', 'contactJS', 'widgets', 'interpreters
              */
             this._manualAggregator = new contactJS.Aggregator(this._discoverer, contactJS.ContextInformationList.fromContextInformationDescriptions(this._discoverer, [
                 {
-                    'name': 'CI_AVAILABLE_DEVICE',
+                    'name': 'CI_AVAILABLE_TROVIS',
                     'type': 'BOOLEAN',
-                    'parameterList': [["CP_DEVICE", "STRING", "TROVIS_5573"]]
+                    'parameterList': [["CP_DEVICE", "STRING", "TROVIS_CONNECTED"]]
                 },
                 {
                     'name': 'CI_TIME',
