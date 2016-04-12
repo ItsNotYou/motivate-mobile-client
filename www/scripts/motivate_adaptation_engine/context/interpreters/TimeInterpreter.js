@@ -23,17 +23,16 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 ]
             },
             simpleInterpretData: function(values, callback) {
-                var trovis_time = values[0].time;
-                var date = new Date();
-                //device time without seconds or am/pm
-                //var device_time = date.toLocaleTimeString(navigator.language, {hour: '2-digit', minute: '2-digite'}).replace(/(:\d{2}| [AP]M)$/, "");
+                //trovis time in format hh:mm
+                var t_time = values[0].time;
+                var d = new Date();
+                //device time in format hh:mm
+                var d_time = d.getHours()+":"+d.getMinutes()
 
                 //compare date and device time
-                //var time_diff =
-                //prüfen, ob trovis time da ist
+                //Sommer-/Winderzeit!!!
 
-                // TODO: Der Zeitvergleich muss mit einem gewissen Akzeptanz-Delta durchgefuehrt werden
-                if (date == trovis_time){
+                if (d_time == t_time){
                     callback({0: "true"});
                 } else {
                     callback({0: "false"});
@@ -42,5 +41,3 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
         });
     })();
 });
-
-
