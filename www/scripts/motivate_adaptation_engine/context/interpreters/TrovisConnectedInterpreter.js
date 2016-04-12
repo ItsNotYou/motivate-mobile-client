@@ -11,12 +11,11 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                         //TrovisConnectedWidget
                         'name': 'CI_DEVICE_DATA',
                         'type': 'OBJECT',
-                        'parameterList': [["CP_DEVICE", "STRING", "TROVIS_DATA"]] // TODO: CP_DEVICE statt CP_UNIT
+                        'parameterList': [["CP_DEVICE", "STRING", "TROVIS_DATA"]]
                     }
                 ],
                 out: [
                     {
-                        // TODO: Kontextdaten an Trovis5573FinderWidget anpassen
                         'name': 'CI_AVAILABLE_TROVIS',
                         'type': 'BOOLEAN',
                         'parameterList': [["CP_DEVICE", "STRING", "TROVIS_CONNECTED"]]
@@ -25,7 +24,6 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
             },
             simpleInterpretData: function(values, callback) {
                 var connection = values[0].connected;
-                console.log("Tini: Connection: " + connection);
 
                 if (connection === "false" || connection === undefined){
                     callback({0: "false"});

@@ -21,12 +21,17 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
 
             var publishResult = function(data, error) {
                 var connected = "true";
+                var time = "NA";
                 if (error) {
+                    //alert("Tini: Login failed!");
                     // It seems we don't have any response. Slow Pi or no Pi?
                     connected = undefined;
                 } else {
                     // We have some data to process
-                    var time = $.trim($(timeSelector, data).html());
+                    //time = $.trim($("timeSelector", data).html());
+                    time = $.trim($(timeSelector, data).html());
+
+                    //alert("Tini: Login succeeded!\n" + "Zeit: " + time);
                     // If we don't have a time we are not connected
                     connected = time === "NA" ? "false" : "true";
                 }
@@ -34,13 +39,14 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
                 callback({0: {
                     host: host,
                     data: data,
+                    time: time,
                     connected: connected
                 }});
             };
 
             $.ajax({
                 url: host,
-                headers: {"Authorization":"login"},
+                headers: {"Authorization":login},
                 timeout: 10000,
                 crossDomain: true,
                 success: function(data) { publishResult(data, false); },
