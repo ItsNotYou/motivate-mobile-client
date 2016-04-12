@@ -23,18 +23,17 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 ]
             },
             simpleInterpretData: function(values, callback) {
-                var trovis_time = values[0];
+                var trovis_time = values[0].time;
                 var date = new Date();
                 //device time without seconds or am/pm
-                var device_time = date.toLocaleTimeString(navigator.language, {hour: '2-digit', minute: '2-digite'}).replace(/(:\d{2}| [AP]M)$/, "");
-                alert(device_time);
+                //var device_time = date.toLocaleTimeString(navigator.language, {hour: '2-digit', minute: '2-digite'}).replace(/(:\d{2}| [AP]M)$/, "");
 
-                //console.log("Tini: Trovis Zeit - "+ trovis_time);
-                //console.log("Tini: Datum - " + date);
-                //console.log("Tini: Mobile Zeit -" + device_time);
+                //compare date and device time
+                //var time_diff =
+                //prüfen, ob trovis time da ist
 
                 // TODO: Der Zeitvergleich muss mit einem gewissen Akzeptanz-Delta durchgefuehrt werden
-                if (trovis_time === device_time){
+                if (date == trovis_time){
                     callback({0: "true"});
                 } else {
                     callback({0: "false"});
