@@ -9,7 +9,7 @@ define([
   './RouterFinderWidget',
   './ScanWidget',
   './SupportKeywordWidget',
-  './Trovis5573FinderWidget',
+  './RaspberryPiFinderWidget',
   './TrovisConnectedWidget',
   './WifiEnabledWidget'
 ], function() {
