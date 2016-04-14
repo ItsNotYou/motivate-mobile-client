@@ -18,20 +18,25 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
             var host = "http://192.168.7.35/";
             var login = "Basic " + btoa("admin:admin");
             var timeSelector = "tr:first-child td:nth-child(2)";
+            var dateSelector = "tr:nth-child(6) td:nth-child(2)";
+            var yearSelector = "tr:nth-child(7) td:nth-child(2)";
 
             var publishResult = function(data, error) {
                 var connected = "true";
                 var time = "NA";
+                var date = "NA";
+                var year = "NA";
                 if (error) {
                     //alert("Tini: Login failed!");
                     // It seems we don't have any response. Slow Pi or no Pi?
                     connected = undefined;
                 } else {
                     // We have some data to process
-                    //time = $.trim($("timeSelector", data).html());
                     time = $.trim($(timeSelector, data).html());
+                    date = $.trim($(dateSelector, data).html());
+                    year = $.trim($(yearSelector, data).html());
 
-                    //alert("Tini: Login succeeded!\n" + "Zeit: " + time);
+                    //alert("Tini: Login succeeded!\n" + "Zeit: " + time + "\n" + "Datum:" + date);
                     // If we don't have a time we are not connected
                     connected = time === "NA" ? "false" : "true";
                 }
@@ -40,6 +45,8 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
                     host: host,
                     data: data,
                     time: time,
+                    date: date,
+                    year: year,
                     connected: connected
                 }});
             };
