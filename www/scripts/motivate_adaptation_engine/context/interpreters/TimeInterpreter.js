@@ -49,12 +49,8 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
 
                 // if trovis' time between mobile time (+/- 2 minutes) ...
                 if ((m1 <= t) && (t <= m2)){
-                    alert(m1 + "\n" + t + "\n" + m2 + "\n" +
-                        "true");
                     callback({0: "true"});
                 } else {
-                    alert(m1 + "\n" + t + "\n" + m2 + "\n" +
-                        "false");
                     callback({0: "false"});
                 }
             }
