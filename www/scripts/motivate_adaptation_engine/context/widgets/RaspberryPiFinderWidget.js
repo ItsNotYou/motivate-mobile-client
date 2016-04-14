@@ -3,9 +3,9 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
         description: {
             out: [
                 {
-                    'name': 'CI_AVAILABLE_PI',
+                    'name': 'CI_AVAILABLE_DEVICES',
                     'type': 'BOOLEAN',
-                    'parameterList': [["CP_DEVICE", "STRING", "PI_AVAILABLE"]]
+                    'parameterList': [["CP_DEVICE", "STRING", "RASPBERRY_PI"]]
                 }
             ],
             updateInterval: 10000

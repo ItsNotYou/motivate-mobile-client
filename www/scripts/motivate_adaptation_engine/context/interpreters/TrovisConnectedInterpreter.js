@@ -16,9 +16,9 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 ],
                 out: [
                     {
-                        'name': 'CI_AVAILABLE_TROVIS',
+                        'name': 'CI_AVAILABLE_DEVICES',
                         'type': 'BOOLEAN',
-                        'parameterList': [["CP_DEVICE", "STRING", "TROVIS_CONNECTED"]]
+                        'parameterList': [["CP_DEVICE", "STRING", "TROVIS"]]
                     }
                 ]
             },
