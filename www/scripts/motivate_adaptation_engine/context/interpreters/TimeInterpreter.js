@@ -18,7 +18,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                     {
                         'name': 'CI_TIME',
                         'type': 'BOOLEAN',
-                        'parameterList': [["CP_DEVICE", "STRING", "TIME_CORRECT"]]
+                        'parameterList': [["CP_DEVICE", "STRING", "TROVIS"]]
                     }
                 ]
             },
