@@ -23,6 +23,9 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 ]
             },
             simpleInterpretData: function(values, callback) {
+                // We allow a derivation of +/- 2 minutes
+                var allowedDelta = 2*60*1000;
+
                 //data from TrovisConnectedWidget
                 var time = values[0].time;
                 var date = values[0].date;
@@ -43,14 +46,18 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
 
                 //get time from mobile phone, convert into milliseconds and generate range
                 var mobile_date = new Date();
-                var m1 = mobile_date.getTime() - 2*60*1000; //sub 2 minutes;
-                var m2 = mobile_date.getTime() + 2*60*1000; //add 2 minutes;
+                var m1 = mobile_date.getTime() - allowedDelta;
+                var m2 = mobile_date.getTime() + allowedDelta;
 
 
-                // if trovis' time between mobile time (+/- 2 minutes) ...
-                if ((m1 <= t) && (t <= m2)){
+                if (isNaN(t)) {
+                    // Trovis not connected
+                    callback({0: undefined});
+                } else if ((m1 <= t) && (t <= m2)) {
+                    // Trovis' time between mobile time (+/- 2 minutes)
                     callback({0: "true"});
                 } else {
+                    // Trovis' time is off
                     callback({0: "false"});
                 }
             }
