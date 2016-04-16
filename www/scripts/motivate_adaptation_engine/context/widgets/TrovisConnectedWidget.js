@@ -54,7 +54,7 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
             $.ajax({
                 url: host,
                 headers: {"Authorization":login},
-                timeout: 10000,
+                timeout: 5000,
                 crossDomain: true,
                 success: function(data) { publishResult(data, false); },
                 error: function() { publishResult(undefined, true); }
