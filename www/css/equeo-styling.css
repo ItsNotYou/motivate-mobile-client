@@ -1,0 +1,84 @@
+/* equeo specific css rules to mimic equeos corporate design */
+
+/* App title and title bar */
+ion-header-bar {
+    background-color: #101F43 !important;
+    border: none !important;
+}
+.title {
+    color: white !important;
+    font-family: Verdana;
+}
+.back-text {
+    color: white !important;
+}
+.icon.ion-ios-arrow-back {
+    color: white !important;
+}
+.icon.ion-android-arrow-back {
+    color: white !important;
+}
+.icon.ion-ios-arrow-back::before {
+    font-size: 24px !important;
+}
+
+/* Right arrow on learning units (open unit) */
+.item-icon-right .icon {
+    font-size: 16px !important;
+    background-color: #F1F1F1;
+}
+
+.item-icon-right {
+    background-color: #F1F1F1;
+    padding-bottom: 30px;
+}
+
+/* "No units available" text */
+.item-divider {
+    background-color: #FFFFFF;
+    border: none;
+}
+
+/* Learning unit overview */
+ion-content {
+    padding: 0 !important;
+    background-color: #FFFFFF;
+}
+.learning-unit-card .unit-title {
+    font-family: Verdana;
+}
+.learning-unit-card {
+    margin: 0 !important;
+    box-shadow: none !important;
+    border-bottom-style: solid !important;
+    border-bottom-width: 3px !important;
+    border-color: #E1E1E1 !important;
+    border-radius: 0 !important;
+}
+.learning-unit-card .unit-state-new {
+    right: 40px !important;
+}
+
+/* Learning unit content */
+.learning-unit-content .gridelement {
+    box-shadow: none !important;
+}
+.learning-unit-content #gridcontainer {
+    background-color: #FFFFFF !important;
+}
+
+/* Button "Hide old units" */
+.hide-old-units {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border: none;
+    color: #000000 !important;
+}
+.bar-footer {
+    background-color: #F1F1F1 !important;
+    border-top-style: solid !important;
+    border-top-width: 3px !important;
+    border-color: #E1E1E1 !important;
+    padding: 0;
+}

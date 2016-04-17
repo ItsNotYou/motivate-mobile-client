@@ -9,6 +9,7 @@
   <link href="css/style.css" rel="stylesheet">
   <link href="css/designmode.css" rel="stylesheet">
   <link href="css/textmediaoutput.css" rel="stylesheet">
+  <link href="css/equeo-styling.css" rel="stylesheet">
 
   <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
   <link href="css/ionic.app.css" rel="stylesheet">
@@ -35,40 +36,36 @@
   <ion-nav-view></ion-nav-view>
 
   <script id="cards.html" type="text/ng-template">
-    <ion-view view-title="MOTIVATE Mobile Client">
+    <ion-view view-title="Startseite">
       <ion-content class="padding">
         <div class="item item-divider" ng-hide="scenarioService.getVisibleUnitCount()">
           Leider sind derzeit keine Informationen verfügbar
         </div>
         <div class="list card learning-unit-card" ng-repeat="unit in scenarioService.getUnits() | orderBy:'-_state.new'" ng-hide="unit._state.hide">
-          <div class="item item-divider">
-            {{unit._name}}
-          </div>
           <a href="#/content" class="item item-icon-right" ng-click="scenarioService.setCurrentUnitUUID(unit._uuid)">
+            <i class="icon ion-record positive unit-state-new" ng-if="unit._state.new"></i>
             <i class="icon ion-chevron-right"></i>
-            {{unit._description}}</p>
+            <div class="unit-title">
+              {{unit._name}}
+              <i class="icon ion-ios-musical-notes positive" ng-if="unit.hasAudio"></i>
+              <i class="icon ion-ios-film-outline positive" ng-if="unit.hasVideo"></i>
+              <i class="icon ion-ios-book-outline positive" ng-if="unit.hasText"></i>
+              <i class="icon ion-ios-photos-outline positive" ng-if="unit.hasImage"></i>
+            </div>
+            <p>{{unit._description}}</p>
           </a>
-          <div class="item item-divider">
-            <i class="icon ion-ios-musical-notes positive" ng-if="unit.hasAudio"></i>
-            <i class="icon ion-ios-film-outline positive" ng-if="unit.hasVideo"></i>
-            <i class="icon ion-ios-book-outline positive" ng-if="unit.hasText"></i>
-            <i class="icon ion-ios-photos-outline positive" ng-if="unit.hasImage"></i>
-            <i class="icon ion-record positive" ng-if="unit._state.new" style="float: right" ></i>
-          </div>
         </div>
       </ion-content>
 
       <div class="bar bar-footer bar-light">
-        <div style="text-align: center; line-height: 44px; width: 100%">
-          <button class="button button-outline button-positive" ng-click="fireFirstAction()">Hide old units</button>
-        </div>
+        <button class="button button-outline button-positive hide-old-units" ng-click="fireFirstAction()">Verstecke alte Einheiten</button>
       </div>
     </ion-view>
   </script>
 
   <script id="content.html" type="text/ng-template">
-    <ion-view view-title="Content">
-      <ion-content class="padding">
+    <ion-view view-title="">
+      <ion-content class="padding learning-unit-content">
         <div id="gridcontainer" card-content></div>
       </ion-content>
     </ion-view>
