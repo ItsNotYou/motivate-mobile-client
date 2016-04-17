@@ -52,7 +52,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
 
                 if (isNaN(t)) {
                     // Trovis not connected
-                    callback({0: undefined});
+                    callback({});
                 } else if ((m1 <= t) && (t <= m2)) {
                     // Trovis' time between mobile time (+/- 2 minutes)
                     callback({0: "true"});
